@@ -4,7 +4,7 @@ const loggingMiddleware = require('../Logging Middleware/index');
 const logger = require('../Logging Middleware/logger');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -82,7 +82,7 @@ app.post('/shorturls', async (req, res) => {
   });
 
   res.status(201).json({
-    shortLink: `http://localhost:3000/${finalShortcode}`,
+    shortLink: `http://localhost:3001/${finalShortcode}`,
     expiry: expiryDate.toISOString()
   });
 });
