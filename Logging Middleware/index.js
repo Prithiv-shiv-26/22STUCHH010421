@@ -1,9 +1,9 @@
 const logger = require('./logger');
 
-const loggingMiddleware = (stack, level, token) => {
+const loggingMiddleware = (stack, level, packageName) => {
   return (req, res, next) => {
     const message = `${req.method} ${req.originalUrl}`;
-    logger(stack, level, 'middleware', message, token);
+    logger({ stack, level, message, packageName });
     next();
   };
 };
